@@ -1,13 +1,20 @@
 :root {
-  --bg: #f7f8fb;
-  --panel: #ffffff;
-  --text: #272727;
-  --heading: #222222;
-  --muted: #6b7280;
-  --border: #e5e7eb;
-  --link: #267cb9;
-  --link-strong: #0b5f94;
-  --shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+  --bg: #eef3fb;
+  --panel: rgba(255, 255, 255, 0.84);
+  --panel-strong: rgba(255, 255, 255, 0.96);
+  --text: #1f2937;
+  --heading: #0f172a;
+  --muted: #5f6b7b;
+  --border: rgba(123, 149, 184, 0.22);
+  --border-strong: rgba(78, 114, 162, 0.3);
+  --link: #2563eb;
+  --link-strong: #1d4ed8;
+  --accent: #0f766e;
+  --accent-soft: rgba(15, 118, 110, 0.12);
+  --orange: #f97316;
+  --shadow: 0 24px 50px rgba(15, 23, 42, 0.08);
+  --shadow-strong: 0 28px 60px rgba(15, 23, 42, 0.12);
+  --glow: rgba(37, 99, 235, 0.18);
   --wrapper-width: 980px;
   --sidebar-width: 300px;
   --content-width: 600px;
@@ -27,11 +34,27 @@ body {
   margin: 0;
   padding: 48px 32px;
   background:
-    radial-gradient(circle at top left, rgba(38, 124, 185, 0.08), transparent 24%),
-    linear-gradient(180deg, #fbfcfe 0%, #f4f6fa 100%);
+    radial-gradient(circle at 8% 12%, rgba(37, 99, 235, 0.18), transparent 20%),
+    radial-gradient(circle at 88% 10%, rgba(15, 118, 110, 0.16), transparent 22%),
+    radial-gradient(circle at 65% 80%, rgba(249, 115, 22, 0.12), transparent 18%),
+    linear-gradient(180deg, #f8fbff 0%, #edf3fb 52%, #edf2f7 100%);
   color: var(--text);
   font: 14px/1.6 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 78%);
+  opacity: 0.45;
 }
 
 a {
@@ -61,15 +84,18 @@ h6 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.15rem;
+  letter-spacing: -0.05em;
 }
 
 h2 {
-  font-size: 1.9rem;
+  font-size: 2rem;
+  letter-spacing: -0.045em;
 }
 
 h3 {
-  font-size: 1.35rem;
+  font-size: 1.38rem;
+  letter-spacing: -0.03em;
 }
 
 p,
@@ -98,53 +124,85 @@ dl {
 .repo-section,
 .page-footer,
 .case-study {
-  background: rgba(255, 255, 255, 0.88);
+  background: var(--panel);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
 }
 
 .sidebar-inner {
   padding: 28px;
-  border-radius: 18px;
+  border-radius: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 5px;
+  background: linear-gradient(90deg, #2563eb, #14b8a6, #f97316);
+}
+
+.sidebar-inner::after {
+  content: "";
+  position: absolute;
+  right: -34px;
+  top: -24px;
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.16) 0%, transparent 72%);
+  pointer-events: none;
 }
 
 .section-label {
   margin-bottom: 12px;
-  color: var(--muted);
+  color: #5b6f8d;
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .identity-block {
   margin-bottom: 22px;
+  position: relative;
+  z-index: 1;
 }
 
 .profile-role {
-  color: var(--muted);
+  color: #305e95;
   font-size: 1rem;
   margin-top: -6px;
+  font-weight: 700;
 }
 
 .profile-avatar {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 14px;
-  border: 1px solid var(--border);
+  border-radius: 18px;
+  border: 1px solid var(--border-strong);
   margin-bottom: 22px;
+  box-shadow: 0 18px 32px rgba(37, 99, 235, 0.14);
+  position: relative;
+  z-index: 1;
 }
 
 .contact-block {
   margin-bottom: 22px;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
 }
 
 .contact-line {
   margin-bottom: 10px;
   color: var(--heading);
+  font-weight: 700;
 }
 
 .contact-links {
@@ -155,6 +213,7 @@ dl {
 
 .contact-link {
   font-weight: 700;
+  color: var(--heading);
 }
 
 .contact-link + .contact-link {
@@ -171,6 +230,8 @@ dl {
 
 .sidebar-copy {
   margin-bottom: 22px;
+  position: relative;
+  z-index: 1;
 }
 
 .profile-bio {
@@ -185,6 +246,8 @@ dl {
   margin: 0;
   padding-top: 18px;
   border-top: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
 }
 
 .sidebar-meta div + div {
@@ -209,6 +272,9 @@ dl {
   display: inline-block;
   margin-top: 22px;
   font-weight: 700;
+  color: var(--heading);
+  position: relative;
+  z-index: 1;
 }
 
 .sidebar-github::after {
@@ -222,38 +288,64 @@ dl {
 .intro-section,
 .repo-section,
 .page-footer {
-  border-radius: 18px;
-  padding: 28px 30px;
+  border-radius: 22px;
+  padding: 30px 32px;
 }
 
 .intro-section {
   margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.1), transparent 28%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(243, 248, 255, 0.9) 100%);
+}
+
+.intro-section::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  bottom: -54px;
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.16) 0%, transparent 70%);
 }
 
 .lead {
   color: var(--muted);
-  font-size: 1.02rem;
-  line-height: 1.75;
+  font-size: 1.04rem;
+  line-height: 1.8;
   max-width: 60ch;
+  position: relative;
+  z-index: 1;
 }
 
 .featured-list {
   display: grid;
-  gap: 22px;
+  gap: 24px;
 }
 
 .case-study {
-  padding: 28px 30px;
-  border-radius: 18px;
+  padding: 30px 32px;
+  border-radius: 22px;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.case-study:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-strong);
+  border-color: var(--border-strong);
 }
 
 .case-study-spotlight {
   position: relative;
   overflow: hidden;
-  border-color: #cfe0ed;
+  border-color: rgba(37, 99, 235, 0.26);
   background:
-    radial-gradient(circle at top right, rgba(38, 124, 185, 0.12), transparent 30%),
-    linear-gradient(180deg, rgba(248, 252, 255, 0.98) 0%, rgba(255, 255, 255, 0.98) 100%);
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.22), transparent 28%),
+    radial-gradient(circle at bottom left, rgba(15, 118, 110, 0.14), transparent 22%),
+    linear-gradient(135deg, rgba(247, 251, 255, 0.98) 0%, rgba(255, 255, 255, 0.98) 50%, rgba(245, 252, 251, 0.96) 100%);
 }
 
 .case-study-spotlight::before {
@@ -261,7 +353,22 @@ dl {
   position: absolute;
   inset: 0 auto 0 0;
   width: 4px;
-  background: linear-gradient(180deg, #267cb9 0%, #76b4df 100%);
+  background: linear-gradient(180deg, #2563eb 0%, #14b8a6 55%, #f97316 100%);
+}
+
+.case-study-spotlight::after {
+  content: "Featured Build";
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  color: #f8fafc;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .case-study-spotlight-grid {
@@ -288,44 +395,59 @@ dl {
   min-height: 30px;
   padding: 6px 12px;
   border-radius: 999px;
-  border: 1px solid #dbe4ec;
-  background: #f9fbfd;
-  color: #35516a;
+  border: 1px solid rgba(78, 114, 162, 0.18);
+  background: rgba(255, 255, 255, 0.72);
+  color: #345272;
   font-size: 0.86rem;
   font-weight: 700;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .case-study-summary {
   color: var(--heading);
-  font-size: 1.02rem;
-  line-height: 1.78;
+  font-size: 1.04rem;
+  line-height: 1.82;
+  max-width: 58ch;
 }
 
 .case-study-detail {
   color: var(--muted);
+  max-width: 60ch;
 }
 
 .case-study-callout {
   margin-top: -4px;
-  padding: 12px 14px;
-  border-left: 3px solid #267cb9;
-  background: rgba(38, 124, 185, 0.06);
-  color: #2e4960;
+  padding: 14px 16px;
+  border-left: 3px solid #2563eb;
+  border-radius: 0 14px 14px 0;
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.1), rgba(15, 118, 110, 0.07));
+  color: #274560;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
 .case-study-visual {
   margin: 0;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
-  border: 1px solid #dbe4ec;
-  box-shadow: 0 18px 36px rgba(38, 124, 185, 0.14);
-  background: #f8fbfe;
+  border: 1px solid rgba(98, 141, 197, 0.24);
+  box-shadow: 0 24px 42px rgba(37, 99, 235, 0.18);
+  background: linear-gradient(180deg, #f8fbfe 0%, #eef6ff 100%);
+  position: relative;
 }
 
 .case-study-visual img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.case-study-visual::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 30%;
+  background: linear-gradient(180deg, transparent, rgba(15, 23, 42, 0.1));
+  pointer-events: none;
 }
 
 .case-study-links {
@@ -342,17 +464,19 @@ dl {
 .case-link-primary {
   display: inline-flex;
   align-items: center;
-  padding: 10px 14px;
+  justify-content: center;
+  padding: 11px 16px;
   border-radius: 999px;
-  background: #267cb9;
+  background: linear-gradient(135deg, #2563eb 0%, #14b8a6 100%);
   color: #ffffff;
-  box-shadow: 0 8px 18px rgba(38, 124, 185, 0.22);
+  box-shadow: 0 14px 24px rgba(37, 99, 235, 0.24);
 }
 
 .case-link-primary:hover,
 .case-link-primary:focus {
   color: #ffffff;
-  background: #0b5f94;
+  background: linear-gradient(135deg, #1d4ed8 0%, #0f766e 100%);
+  transform: translateY(-1px);
 }
 
 .case-link::after {
@@ -365,6 +489,8 @@ dl {
 
 .repo-section {
   margin-top: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 250, 255, 0.92) 100%);
 }
 
 .repo-lead {
@@ -378,6 +504,12 @@ dl {
 .repo-item {
   padding: 18px 0;
   border-top: 1px solid var(--border);
+  transition: transform 180ms ease, padding-left 180ms ease;
+}
+
+.repo-item:hover {
+  transform: translateX(4px);
+  padding-left: 6px;
 }
 
 .repo-item:first-child {
@@ -424,8 +556,8 @@ dl {
   display: inline-flex;
   padding: 4px 10px;
   border-radius: 999px;
-  background: #f3f7fb;
-  color: #51667a;
+  background: linear-gradient(180deg, #f5f9ff 0%, #edf5ff 100%);
+  color: #4d6580;
   font-size: 0.8rem;
 }
 
@@ -461,6 +593,15 @@ dl {
   color: var(--muted);
 }
 
+.repo-link:hover,
+.repo-link:focus,
+.sidebar-github:hover,
+.sidebar-github:focus,
+.contact-link:hover,
+.contact-link:focus {
+  text-shadow: 0 0 18px var(--glow);
+}
+
 @media print, screen and (max-width: 960px) {
   body {
     padding: 28px 18px;
@@ -477,6 +618,12 @@ dl {
 
   .case-study-spotlight-grid {
     grid-template-columns: 1fr;
+  }
+
+  .case-study-spotlight::after {
+    top: auto;
+    right: 18px;
+    bottom: 18px;
   }
 }
 

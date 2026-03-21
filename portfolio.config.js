@@ -39,7 +39,7 @@ window.PORTFOLIO_CONFIG = {
       detail:
         "The project combines a reproducible data pipeline, model comparison, SHAP-based explanation, automated tests, and an interactive Streamlit interface. It is the kind of work I enjoy most: using public data to build something analytical, interpretable, and deployment-ready.",
       callout:
-        "The live link below opens the direct calculator experience, not just the project wrapper, so visitors land straight in the app.",
+        "The main call-to-action now points to the live Render calculator, so visitors can try the scoring experience immediately.",
       imageUrl:
         "https://raw.githubusercontent.com/andyombogo/open-health-risk-engine/main/figures/app_walkthrough.png",
       imageAlt:
@@ -52,7 +52,7 @@ window.PORTFOLIO_CONFIG = {
         },
         {
           label: "Open calculator",
-          href: "https://andyombogo-open-health-risk-engine.hf.space/?embed=true&__theme=light&v=20260319-4",
+          href: "https://open-health-risk-engine.onrender.com/",
           primary: true
         }
       ]
@@ -128,8 +128,8 @@ window.PORTFOLIO_CONFIG = {
       description:
         "Explainable mental health risk demo using NHANES, Streamlit, SHAP, and machine learning.",
       language: "Python",
-      homepage: "https://andyombogo-open-health-risk-engine.hf.space/?embed=true&__theme=light&v=20260319-4",
-      homepageLabel: "Calculator",
+      homepage: "https://open-health-risk-engine.onrender.com/",
+      homepageLabel: "Calculator app",
       stargazers_count: 0,
       updated_at: "2026-03-21T16:09:16Z",
       topics: ["data-science", "machine-learning", "mental-health", "streamlit", "shap"]
