@@ -49,12 +49,14 @@ window.PORTFOLIO_CONFIG = {
       links: [
         {
           label: "GitHub",
-          href: "https://github.com/andyombogo/open-health-risk-engine"
+          href: "https://github.com/andyombogo/open-health-risk-engine",
+          icon: "github"
         },
         {
           label: "Open calculator",
           href: "https://open-health-risk-engine.onrender.com/",
-          primary: true
+          primary: true,
+          icon: "external"
         }
       ]
     },
@@ -71,7 +73,8 @@ window.PORTFOLIO_CONFIG = {
       links: [
         {
           label: "GitHub",
-          href: "https://github.com/andyombogo/vaccination-coverage-analysis-usa"
+          href: "https://github.com/andyombogo/vaccination-coverage-analysis-usa",
+          icon: "github"
         }
       ]
     },
@@ -88,7 +91,8 @@ window.PORTFOLIO_CONFIG = {
       links: [
         {
           label: "GitHub",
-          href: "https://github.com/andyombogo/art-coverage-app"
+          href: "https://github.com/andyombogo/art-coverage-app",
+          icon: "github"
         }
       ]
     },
@@ -105,7 +109,8 @@ window.PORTFOLIO_CONFIG = {
       links: [
         {
           label: "GitHub",
-          href: "https://github.com/andyombogo/movies-dataset"
+          href: "https://github.com/andyombogo/movies-dataset",
+          icon: "github"
         }
       ]
     }
@@ -113,9 +118,14 @@ window.PORTFOLIO_CONFIG = {
   publicRepos: [
     {
       name: "andyombogo.github.io",
+      featured: true,
+      tone: "ink",
+      eyebrow: "Portfolio Source",
       html_url: "https://github.com/andyombogo/andyombogo.github.io",
       description:
         "Root GitHub Pages portfolio for John Andrew, designed as the main public home for selected work and live project links.",
+      impact:
+        "This is the repo behind the site you are reading now, where the portfolio presentation itself is treated like a product.",
       language: "HTML",
       homepage: "https://andyombogo.github.io/",
       homepageLabel: "Portfolio",
@@ -125,9 +135,13 @@ window.PORTFOLIO_CONFIG = {
     },
     {
       name: "vaccination-coverage-analysis-usa",
+      tone: "teal",
+      eyebrow: "Dashboard Build",
       html_url: "https://github.com/andyombogo/vaccination-coverage-analysis-usa",
       description:
         "Interactive Streamlit dashboard for exploring maternal vaccination coverage in the United States with CDC data, filters, and decision-ready views.",
+      impact:
+        "It shows how I turn public-health data into a guided interface that is easy to explore, compare, and communicate.",
       language: "Python",
       homepage: "",
       homepageLabel: "",
@@ -137,9 +151,13 @@ window.PORTFOLIO_CONFIG = {
     },
     {
       name: "open-health-risk-engine",
+      tone: "blue",
+      eyebrow: "Flagship ML Product",
       html_url: "https://github.com/andyombogo/open-health-risk-engine",
       description:
         "Explainable mental health risk engine built from NHANES data with XGBoost, SHAP, and a live Streamlit-style calculator experience.",
+      impact:
+        "This is the strongest example of my workflow end to end: modeling, explainability, testing, and a live user-facing experience.",
       language: "Python",
       homepage: "https://open-health-risk-engine.onrender.com/",
       homepageLabel: "Calculator app",
@@ -149,9 +167,13 @@ window.PORTFOLIO_CONFIG = {
     },
     {
       name: "movies-dataset",
+      tone: "orange",
+      eyebrow: "Exploration Workflow",
       html_url: "https://github.com/andyombogo/movies-dataset",
       description:
         "Python data exploration project focused on cleaning, structuring, and analyzing a movie dataset with a reusable workflow.",
+      impact:
+        "It represents the quieter side of my work: clear data wrangling, sensible structure, and repeatable analysis foundations.",
       language: "Python",
       homepage: "",
       homepageLabel: "",
@@ -161,9 +183,13 @@ window.PORTFOLIO_CONFIG = {
     },
     {
       name: "art-coverage-app",
+      tone: "teal",
+      eyebrow: "Public Health Analysis",
       html_url: "https://github.com/andyombogo/art-coverage-app",
       description:
         "WHO ART coverage analysis using PySpark, with a lightweight Flask layer for sharing public-health insights more clearly.",
+      impact:
+        "I like this project because it bridges scalable processing and communication, not just analysis for analysis' sake.",
       language: "HTML",
       homepage: "",
       homepageLabel: "",
