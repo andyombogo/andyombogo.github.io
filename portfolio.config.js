@@ -20,14 +20,14 @@ window.PORTFOLIO_CONFIG = {
     githubUrl: "https://github.com/andyombogo",
     linkedinUrl: "https://linkedin.com/in/john-andrew-dts",
     email: "andyombogo@gmail.com",
-    repoCount: 7,
+    repoCount: 5,
     footerNote:
-      "This portfolio is published from GitHub Pages and backed by the public repositories listed below."
+      "This portfolio is published from GitHub Pages and supported by a tighter selection of the repositories that best represent my work."
   },
   featuredSummary:
     "A small selection of projects that best represent how I approach applied data work: practical problems, interpretable outputs, and polished delivery.",
   repoFeedSummary:
-    "A complete index of the public repositories currently visible on GitHub, excluding the older portfolio mirror and the lightweight profile README repo, with a live refresh on page load.",
+    "A curated GitHub selection focused on the projects that best represent my public health, analytics, and deployment work, with a live refresh on page load.",
   featuredProjects: [
     {
       repo: "open-health-risk-engine",
@@ -115,87 +115,66 @@ window.PORTFOLIO_CONFIG = {
       name: "andyombogo.github.io",
       html_url: "https://github.com/andyombogo/andyombogo.github.io",
       description:
-        "Main public portfolio site for John Andrew, published with GitHub Pages.",
+        "Root GitHub Pages portfolio for John Andrew, designed as the main public home for selected work and live project links.",
       language: "HTML",
       homepage: "https://andyombogo.github.io/",
-      homepageLabel: "Live site",
+      homepageLabel: "Portfolio",
       stargazers_count: 0,
       updated_at: "2026-03-22T09:30:00Z",
-      topics: ["portfolio", "github-pages", "personal-site"]
+      topics: ["portfolio", "github-pages", "personal-site", "data-science"]
     },
     {
       name: "vaccination-coverage-analysis-usa",
       html_url: "https://github.com/andyombogo/vaccination-coverage-analysis-usa",
       description:
-        "Deployment-ready Streamlit dashboard for exploring maternal vaccination coverage in the United States using CDC data.",
+        "Interactive Streamlit dashboard for exploring maternal vaccination coverage in the United States with CDC data, filters, and decision-ready views.",
       language: "Python",
       homepage: "",
       homepageLabel: "",
       stargazers_count: 0,
       updated_at: "2026-03-21T17:02:33Z",
-      topics: ["streamlit", "cdc", "dashboard", "public-health"]
+      topics: ["streamlit", "cdc", "dashboard", "public-health", "analytics"]
     },
     {
       name: "open-health-risk-engine",
       html_url: "https://github.com/andyombogo/open-health-risk-engine",
       description:
-        "Explainable mental health risk demo using NHANES, Streamlit, SHAP, and machine learning.",
+        "Explainable mental health risk engine built from NHANES data with XGBoost, SHAP, and a live Streamlit-style calculator experience.",
       language: "Python",
       homepage: "https://open-health-risk-engine.onrender.com/",
       homepageLabel: "Calculator app",
       stargazers_count: 0,
       updated_at: "2026-03-21T16:09:16Z",
-      topics: ["data-science", "machine-learning", "mental-health", "streamlit", "shap"]
+      topics: ["data-science", "machine-learning", "mental-health", "shap", "xgboost"]
     },
     {
       name: "movies-dataset",
       html_url: "https://github.com/andyombogo/movies-dataset",
-      description: "Python repository for movie data exploration, cleaning, and analysis.",
+      description:
+        "Python data exploration project focused on cleaning, structuring, and analyzing a movie dataset with a reusable workflow.",
       language: "Python",
       homepage: "",
       homepageLabel: "",
       stargazers_count: 0,
       updated_at: "2025-03-03T11:45:49Z",
-      topics: ["python", "data-analysis"]
+      topics: ["python", "data-analysis", "eda", "data-cleaning"]
     },
     {
       name: "art-coverage-app",
       html_url: "https://github.com/andyombogo/art-coverage-app",
       description:
-        "WHO ART coverage analysis using PySpark, with a lightweight web interface for presenting the results.",
+        "WHO ART coverage analysis using PySpark, with a lightweight Flask layer for sharing public-health insights more clearly.",
       language: "HTML",
       homepage: "",
       homepageLabel: "",
       stargazers_count: 0,
       updated_at: "2025-03-03T11:37:00Z",
-      topics: ["pyspark", "flask", "visualization", "public-health"]
-    },
-    {
-      name: "SDS-6103",
-      html_url: "https://github.com/andyombogo/SDS-6103",
-      description: "MSc Data Science coursework repository for Statistical Analysis for Computing.",
-      language: "HTML",
-      homepage: "",
-      homepageLabel: "",
-      stargazers_count: 0,
-      updated_at: "2024-11-10T14:48:09Z",
-      topics: ["coursework", "statistics", "data-science"]
-    },
-    {
-      name: "design",
-      html_url: "https://github.com/andyombogo/design",
-      description: "Primer design guidelines repository.",
-      language: "",
-      homepage: "https://primer.style/design",
-      homepageLabel: "Website",
-      stargazers_count: 0,
-      updated_at: "2024-10-23T14:57:15Z",
-      topics: ["design", "guidelines"]
-    },
+      topics: ["pyspark", "flask", "public-health", "data-visualization"]
+    }
   ],
   repoFeed: {
     username: "andyombogo",
     limit: 20,
-    exclude: ["minimal-portfolio", "andyombogo"]
+    exclude: ["minimal-portfolio", "andyombogo", "SDS-6103", "design"]
   }
 };
