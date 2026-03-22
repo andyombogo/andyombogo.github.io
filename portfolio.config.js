@@ -1,19 +1,18 @@
 window.PORTFOLIO_CONFIG = {
   site: {
-    title: "John Andrew | Portfolio",
+    title: "John Andrew | Data Scientist",
     description:
-      "A lightweight portfolio for John Andrew, showcasing data science, analytics, and public health projects."
+      "Selected work by John Andrew across data science, analytics, and public health."
   },
   profile: {
     name: "John Andrew",
     title: "Data Scientist",
     focus: "Public health analytics, explainable ML, and dashboards",
     location: "Nairobi, Kenya",
-    siteStatus: "Public GitHub Pages site",
     bio:
       "I build practical data science work that goes beyond notebooks, from data cleaning and modeling to documentation, deployment, and interfaces people can actually use.",
     intro:
-      "My recent projects lean toward public health, machine learning, and analytical storytelling, especially when I can turn a research-style workflow into a clear product or dashboard.",
+      "Most of my recent work sits at the intersection of public health, machine learning, and analytical storytelling, especially when I can turn a research workflow into something clearer and more usable.",
     highlight:
       "Applied machine learning, public health data, and decision-support interfaces.",
     avatarUrl: "https://avatars.githubusercontent.com/u/185175445?v=4",
@@ -22,10 +21,10 @@ window.PORTFOLIO_CONFIG = {
     email: "andyombogo@gmail.com",
     repoCount: 5,
     footerNote:
-      "This portfolio is published from GitHub Pages and supported by a tighter selection of the repositories that best represent my work."
+      "Selected projects, source code, and live demos are organized here to make the work easy to explore."
   },
   featuredSummary:
-    "A small selection of projects that best represent how I approach applied data work: practical problems, interpretable outputs, and polished delivery.",
+    "A tighter selection of projects that show how I approach applied data work: practical problems, interpretable outputs, and thoughtful presentation.",
   repoFeedSummary:
     "A curated GitHub selection focused on the projects that best represent my public health, analytics, and deployment work, with a live refresh on page load.",
   featuredProjects: [
@@ -40,7 +39,7 @@ window.PORTFOLIO_CONFIG = {
       detail:
         "The project combines a reproducible data pipeline, model comparison, SHAP-based explanation, automated tests, and an interactive Streamlit interface. It is the kind of work I enjoy most: using public data to build something analytical, interpretable, and deployment-ready.",
       callout:
-        "The main call-to-action now points to the live Render calculator, so visitors can try the scoring experience immediately.",
+        "The live demo gives visitors a direct look at how the scoring experience works in practice.",
       imageUrl:
         "https://raw.githubusercontent.com/andyombogo/open-health-risk-engine/main/figures/app_walkthrough.png",
       imageAlt:
@@ -53,7 +52,7 @@ window.PORTFOLIO_CONFIG = {
           icon: "github"
         },
         {
-          label: "Open calculator",
+          label: "Live demo",
           href: "https://open-health-risk-engine.onrender.com/",
           primary: true,
           icon: "external"
@@ -160,7 +159,7 @@ window.PORTFOLIO_CONFIG = {
         "This is the strongest example of my workflow end to end: modeling, explainability, testing, and a live user-facing experience.",
       language: "Python",
       homepage: "https://open-health-risk-engine.onrender.com/",
-      homepageLabel: "Calculator app",
+      homepageLabel: "Live demo",
       stargazers_count: 0,
       updated_at: "2026-03-21T16:09:16Z",
       topics: ["data-science", "machine-learning", "mental-health", "shap", "xgboost"]

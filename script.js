@@ -411,7 +411,6 @@ function bootstrapPortfolio() {
   setText("profile-repo-count", String(config.profile.repoCount));
   setText("profile-focus", config.profile.focus);
   setText("profile-highlight", config.profile.highlight);
-  setText("site-status", config.profile.siteStatus);
   setText("featured-summary", config.featuredSummary);
   setText("repo-feed-summary", config.repoFeedSummary);
   setText("footer-note", config.profile.footerNote);
@@ -449,20 +448,16 @@ function bootstrapPortfolio() {
   if (introActions) {
     introActions.innerHTML = "";
     introActions.appendChild(
-      makeLink("View GitHub", config.profile.githubUrl, "intro-action intro-action-primary", {
+      makeLink("GitHub profile", config.profile.githubUrl, "intro-action intro-action-primary", {
         icon: "github"
       })
     );
 
-    const spotlightProject = (config.featuredProjects || []).find((project) => project.spotlight);
-    const primarySpotlightLink = spotlightProject && (spotlightProject.links || []).find((link) => link.primary);
-    if (primarySpotlightLink) {
-      introActions.appendChild(
-        makeLink(primarySpotlightLink.label, primarySpotlightLink.href, "intro-action intro-action-secondary", {
-          icon: primarySpotlightLink.icon || "spark"
-        })
-      );
-    }
+    introActions.appendChild(
+      makeAnchorLink("See selected work", "#selected-work", "intro-action intro-action-secondary", {
+        icon: "spark"
+      })
+    );
 
     introActions.appendChild(
       makeAnchorLink("Browse Repositories", "#public-repos", "intro-action intro-action-ghost", {
