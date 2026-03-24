@@ -15,7 +15,7 @@ window.PORTFOLIO_CONFIG = {
       "Most of my recent work sits at the intersection of public health, machine learning, and analytical storytelling, especially when I can turn a research workflow into something clearer and more usable.",
     highlight:
       "Applied machine learning, public health data, and decision-support interfaces.",
-    avatarUrl: "https://avatars.githubusercontent.com/u/185175445?v=4",
+    avatarUrl: "https://avatars.githubusercontent.com/u/185175445?v=4&updated=20260324",
     githubUrl: "https://github.com/andyombogo",
     linkedinUrl: "https://linkedin.com/in/john-andrew-dts",
     email: "andyombogo@gmail.com",
@@ -96,19 +96,36 @@ window.PORTFOLIO_CONFIG = {
     },
     {
       repo: "art-coverage-app",
-      category: "Data Analysis",
-      title: "WHO ART Coverage Analysis",
-      language: "HTML",
+      category: "Interactive Flask Dashboard",
+      title: "WHO ART Coverage Dashboard",
+      language: "Python",
       summary:
-        "A PySpark-based coverage analysis project with a lightweight web layer for presenting results in a more accessible way.",
+        "An interactive Flask + Plotly dashboard for exploring WHO antiretroviral therapy coverage by country, region, and year.",
       detail:
-        "I like this project because it sits between data processing and communication. It takes a public-health dataset, analyzes it with a scalable workflow, and then pushes the findings toward a format that is easier to share than a notebook alone.",
-      tags: ["PySpark", "Flask", "Public Health", "Visualization"],
+        "The repo now reads like a real product instead of a loose analysis project: Render-ready deployment, CI-backed checks, a cleaner structure, exportable filtered CSV views, a lightweight JSON summary endpoint, and clearer analytical views for overview, regional trends, and top or bottom performers.",
+      callout:
+        "The latest dashboard works with 3,407 usable country records across 146 countries, covering coverage estimates from 2000 through 2023.",
+      imageUrl:
+        "https://raw.githubusercontent.com/andyombogo/art-coverage-app/master/docs/assets/overview-preview.svg",
+      imageAlt:
+        "WHO ART coverage dashboard overview preview",
+      metrics: [
+        { label: "Usable records", value: "3,407" },
+        { label: "Countries", value: "146" },
+        { label: "Coverage years", value: "2000-2023" }
+      ],
+      tags: ["WHO", "Flask", "Plotly", "Render", "Public Health"],
       links: [
         {
           label: "GitHub",
           href: "https://github.com/andyombogo/art-coverage-app",
           icon: "github"
+        },
+        {
+          label: "Live dashboard",
+          href: "https://art-coverage-dashboard.onrender.com/",
+          primary: true,
+          icon: "external"
         }
       ]
     },
@@ -200,18 +217,18 @@ window.PORTFOLIO_CONFIG = {
     {
       name: "art-coverage-app",
       tone: "teal",
-      eyebrow: "Public Health Analysis",
+      eyebrow: "Flask Dashboard",
       html_url: "https://github.com/andyombogo/art-coverage-app",
       description:
-        "WHO ART coverage analysis using PySpark, with a lightweight Flask layer for sharing public-health insights more clearly.",
+        "Interactive Flask + Plotly dashboard for exploring WHO ART coverage by country, region, and year, with exportable views and a summary API.",
       impact:
-        "I like this project because it bridges scalable processing and communication, not just analysis for analysis' sake.",
+        "The latest version feels product-ready: Render deployment, CI-backed checks, cleaner repo structure, filtered CSV downloads, and dashboard views that tell a clearer public-health story.",
       language: "HTML",
-      homepage: "",
-      homepageLabel: "",
+      homepage: "https://art-coverage-dashboard.onrender.com/",
+      homepageLabel: "Live dashboard",
       stargazers_count: 0,
-      updated_at: "2025-03-03T11:37:00Z",
-      topics: ["pyspark", "flask", "public-health", "data-visualization"]
+      updated_at: "2026-03-24T12:33:50Z",
+      topics: ["flask", "plotly", "public-health", "render", "data-visualization"]
     }
   ],
   repoFeed: {
