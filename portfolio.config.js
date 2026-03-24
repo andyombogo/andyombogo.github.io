@@ -61,19 +61,36 @@ window.PORTFOLIO_CONFIG = {
     },
     {
       repo: "vaccination-coverage-analysis-usa",
-      category: "Interactive Dashboard",
-      title: "Vaccination Coverage Dashboard",
+      category: "Deployed Public Health Dashboard",
+      title: "US Maternal Vaccination Coverage Dashboard",
       language: "Python",
       summary:
-        "A deployment-focused Streamlit dashboard for exploring maternal vaccination coverage in the United States using CDC data.",
+        "A live Streamlit dashboard for exploring CDC maternal vaccination coverage across vaccines, geographies, seasons, and demographic dimensions.",
       detail:
-        "This project emphasizes exploration and communication: filters, KPI cards, trend views, subgroup comparisons, and export options are all shaped around making the analysis easy to navigate. It shows how I think about turning a dataset into a usable analytical product.",
-      tags: ["CDC", "Dashboard", "Public Health", "Streamlit"],
+        "The latest version cleanly separates a lightweight deployed dashboard from the heavier offline Spark workflow, adds CI-backed tests, and packages the app for Render so the public experience feels maintained and production-minded rather than experimental.",
+      callout:
+        "The current dashboard surfaces 4,322 cleaned CDC records with 62.6% average coverage and 61.7% weighted coverage in the top-level KPI view.",
+      imageUrl:
+        "https://raw.githubusercontent.com/andyombogo/vaccination-coverage-analysis-usa/master/docs/assets/dashboard-hero-preview.png",
+      imageAlt:
+        "US maternal vaccination coverage dashboard hero preview",
+      metrics: [
+        { label: "Records", value: "4,322" },
+        { label: "Average coverage", value: "62.6%" },
+        { label: "Weighted coverage", value: "61.7%" }
+      ],
+      tags: ["CDC", "Render", "Streamlit", "CI", "Public Health"],
       links: [
         {
           label: "GitHub",
           href: "https://github.com/andyombogo/vaccination-coverage-analysis-usa",
           icon: "github"
+        },
+        {
+          label: "Live dashboard",
+          href: "https://vaccination-coverage-dashboard.onrender.com/",
+          primary: true,
+          icon: "external"
         }
       ]
     },
@@ -138,15 +155,15 @@ window.PORTFOLIO_CONFIG = {
       eyebrow: "Dashboard Build",
       html_url: "https://github.com/andyombogo/vaccination-coverage-analysis-usa",
       description:
-        "Interactive Streamlit dashboard for exploring maternal vaccination coverage in the United States with CDC data, filters, and decision-ready views.",
+        "Deployment-ready Streamlit dashboard for exploring CDC maternal vaccination coverage with KPI cards, trend views, geography comparisons, and CSV export.",
       impact:
-        "It shows how I turn public-health data into a guided interface that is easy to explore, compare, and communicate.",
+        "The latest build balances a fast public dashboard with preserved Spark analysis, plus CI and Render deployment so the project feels polished end to end.",
       language: "Python",
-      homepage: "",
-      homepageLabel: "",
+      homepage: "https://vaccination-coverage-dashboard.onrender.com/",
+      homepageLabel: "Live dashboard",
       stargazers_count: 0,
-      updated_at: "2026-03-21T17:02:33Z",
-      topics: ["streamlit", "cdc", "dashboard", "public-health", "analytics"]
+      updated_at: "2026-03-24T07:12:21Z",
+      topics: ["streamlit", "cdc", "dashboard", "public-health", "render"]
     },
     {
       name: "open-health-risk-engine",

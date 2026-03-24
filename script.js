@@ -227,16 +227,43 @@ function renderFeaturedProjects(config) {
       `
       : "";
 
+    const inlineImageMarkup = !project.spotlight && project.imageUrl
+      ? `
+        <figure class="case-study-visual case-study-visual-inline">
+          <img src="${escapeHtml(project.imageUrl)}" alt="${escapeHtml(project.imageAlt || project.title)}">
+        </figure>
+      `
+      : "";
+
     const calloutMarkup = project.callout
       ? `<p class="case-study-callout">${escapeHtml(project.callout)}</p>`
       : "";
 
+    const metricsMarkup = Array.isArray(project.metrics) && project.metrics.length
+      ? `
+        <div class="case-study-metrics">
+          ${project.metrics
+            .map(
+              (metric) => `
+                <div class="case-study-metric">
+                  <span class="case-study-metric-label">${escapeHtml(metric.label)}</span>
+                  <strong class="case-study-metric-value">${escapeHtml(metric.value)}</strong>
+                </div>
+              `
+            )
+            .join("")}
+        </div>
+      `
+      : "";
+
     const bodyMarkup = `
+      ${inlineImageMarkup}
       <div class="case-study-meta">${metaChips}</div>
       <h3>${escapeHtml(project.title)}</h3>
       <p class="case-study-summary">${escapeHtml(project.summary)}</p>
       <p class="case-study-detail">${escapeHtml(project.detail)}</p>
       ${calloutMarkup}
+      ${metricsMarkup}
       <div class="case-study-meta">${tagMarkup}</div>
       <div class="case-study-links">${linkMarkup}</div>
     `;
