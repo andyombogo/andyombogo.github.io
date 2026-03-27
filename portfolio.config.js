@@ -86,7 +86,7 @@ window.PORTFOLIO_CONFIG = {
   featuredSummary:
     "A tighter selection of projects that show how I approach applied data work: practical problems, interpretable outputs, and thoughtful presentation.",
   repoFeedSummary:
-    "A focused GitHub selection that highlights the five projects I most want people to explore right now, from deployed dashboards to reusable public-health tooling.",
+    "A focused GitHub selection that highlights the six projects I most want people to explore right now, from deployed dashboards to reusable public-health tooling.",
   featuredProjects: [
     {
       repo: "open-health-risk-engine",
@@ -334,6 +334,6 @@ window.PORTFOLIO_CONFIG = {
   repoFeed: {
     username: "andyombogo",
     limit: 20,
-    exclude: ["minimal-portfolio", "andyombogo", "andyombogo.github.io", "SDS-6103", "design"]
+    exclude: ["minimal-portfolio", "andyombogo", "andyombogo.github.io", "design"]
   }
 };
