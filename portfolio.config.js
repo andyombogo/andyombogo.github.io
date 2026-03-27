@@ -79,7 +79,7 @@ window.PORTFOLIO_CONFIG = {
         imageAlt: "University of Nairobi logo"
       }
     ],
-    repoCount: 5,
+    repoCount: 6,
     footerNote:
       "Selected projects, source code, and live demos are organized here to make the work easy to explore."
   },
@@ -190,6 +190,32 @@ window.PORTFOLIO_CONFIG = {
       ]
     },
     {
+      repo: "khis-toolkit",
+      category: "Kenya Health Data Toolkit",
+      title: "KHIS Toolkit",
+      language: "Python",
+      summary:
+        "A Kenya-first analytics toolkit for DHIS2 and KHIS workflows, designed to help county teams move from extraction to cleaning, quality checks, forecasting, and dashboard-ready outputs.",
+      detail:
+        "The current README already frames it like a serious public-health utility package: county-aware data pulls, KHIS-specific cleaning, data quality scorecards, forecasting options, and a mental-health workflow that can support both research and operational review.",
+      callout:
+        "This is still in active development, so I positioned it as an evolving toolkit with a strong README and clear public-health direction.",
+      tags: ["KHIS", "DHIS2", "Kenya", "Forecasting", "Data Quality"],
+      links: [
+        {
+          label: "GitHub",
+          href: "https://github.com/andyombogo/khis-toolkit",
+          icon: "github"
+        },
+        {
+          label: "Readme",
+          href: "https://github.com/andyombogo/khis-toolkit/blob/main/README.md",
+          primary: true,
+          icon: "external"
+        }
+      ]
+    },
+    {
       repo: "movies-dataset",
       category: "Data Exploration",
       title: "Movies Dataset Exploration",
@@ -288,6 +314,21 @@ window.PORTFOLIO_CONFIG = {
       stargazers_count: 0,
       updated_at: "2025-03-03T11:45:49Z",
       topics: ["python", "data-analysis", "eda", "data-cleaning"]
+    },
+    {
+      name: "SDS-6103",
+      tone: "orange",
+      eyebrow: "Academic Work",
+      html_url: "https://github.com/andyombogo/SDS-6103",
+      description: "",
+      impact:
+        "This rounds out the portfolio with academic statistical computing work from the MSc Data Science track, complementing the more deployment-focused projects above.",
+      language: "",
+      homepage: "",
+      homepageLabel: "",
+      stargazers_count: 0,
+      updated_at: "",
+      topics: ["statistics", "academic-work", "data-science"]
     }
   ],
   repoFeed: {
