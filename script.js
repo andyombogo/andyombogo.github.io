@@ -49,13 +49,27 @@ function iconMarkup(name) {
   return ICONS[name] || ICONS.external;
 }
 
-function buildLinkContent(label, icon, detail) {
-  const iconBlock = icon
-    ? `<span class="link-icon" aria-hidden="true">${iconMarkup(icon)}</span>`
-    : "";
+function renderLinkVisual(options = {}) {
+  if (options.imageUrl) {
+    return `
+      <span class="link-icon link-icon-image" aria-hidden="true">
+        <img src="${escapeHtml(options.imageUrl)}" alt="${escapeHtml(options.imageAlt || "")}">
+      </span>
+    `;
+  }
 
-  const detailBlock = detail
-    ? `<span class="link-detail">${escapeHtml(detail)}</span>`
+  if (options.icon) {
+    return `<span class="link-icon" aria-hidden="true">${iconMarkup(options.icon)}</span>`;
+  }
+
+  return "";
+}
+
+function buildLinkContent(label, options = {}) {
+  const iconBlock = renderLinkVisual(options);
+
+  const detailBlock = options.detail
+    ? `<span class="link-detail">${escapeHtml(options.detail)}</span>`
     : "";
 
   return `
@@ -82,7 +96,11 @@ function makeLink(label, href, className, options = {}) {
     link.dataset.icon = options.icon;
   }
 
-  link.innerHTML = buildLinkContent(label, options.icon, options.detail);
+  if (options.imageUrl) {
+    link.dataset.iconType = "image";
+  }
+
+  link.innerHTML = buildLinkContent(label, options);
   return link;
 }
 
@@ -97,14 +115,18 @@ function makeAnchorLink(label, href, className, options = {}) {
     link.dataset.icon = options.icon;
   }
 
-  link.innerHTML = buildLinkContent(label, options.icon, options.detail);
+  if (options.imageUrl) {
+    link.dataset.iconType = "image";
+  }
+
+  link.innerHTML = buildLinkContent(label, options);
   return link;
 }
 
 function renderExternalLink(href, label, className, icon) {
   return `
     <a class="${escapeHtml(className)}" href="${escapeHtml(href)}" target="_blank" rel="noreferrer">
-      ${buildLinkContent(label, icon, "")}
+      ${buildLinkContent(label, { icon })}
     </a>
   `;
 }
@@ -451,24 +473,30 @@ function bootstrapPortfolio() {
   const heroLinks = document.getElementById("contact-links");
   if (heroLinks) {
     heroLinks.innerHTML = "";
-    heroLinks.appendChild(
-      makeLink("GitHub", config.profile.githubUrl, "contact-link", {
-        icon: "github",
-        detail: "Code and repos"
-      })
-    );
-    heroLinks.appendChild(
-      makeLink("LinkedIn", config.profile.linkedinUrl, "contact-link", {
-        icon: "linkedin",
-        detail: "Professional profile"
-      })
-    );
-    heroLinks.appendChild(
-      makeLink("Email", `mailto:${config.profile.email}`, "contact-link", {
-        icon: "mail",
-        detail: config.profile.email
-      })
-    );
+    (config.profile.profileLinks || []).forEach((link) => {
+      heroLinks.appendChild(
+        makeLink(link.label, link.href, "contact-link", {
+          icon: link.icon,
+          imageUrl: link.imageUrl,
+          imageAlt: link.imageAlt,
+          detail: link.detail
+        })
+      );
+    });
+  }
+
+  const affiliationsList = document.getElementById("affiliations-list");
+  if (affiliationsList) {
+    affiliationsList.innerHTML = "";
+    (config.profile.affiliations || []).forEach((affiliation) => {
+      const item = document.createElement("article");
+      item.className = "affiliation-item";
+      item.innerHTML = `
+        <strong class="affiliation-name">${escapeHtml(affiliation.name)}</strong>
+        <span class="affiliation-detail">${escapeHtml(affiliation.detail)}</span>
+      `;
+      affiliationsList.appendChild(item);
+    });
   }
 
   const introActions = document.getElementById("intro-actions");
@@ -515,7 +543,7 @@ function bootstrapPortfolio() {
   const footerLink = document.getElementById("footer-github-link");
   if (footerLink) {
     footerLink.href = config.profile.githubUrl;
-    footerLink.innerHTML = buildLinkContent("View full GitHub profile", "github", "");
+    footerLink.innerHTML = buildLinkContent("View full GitHub profile", { icon: "github" });
   }
 
   document.querySelectorAll(".sidebar-inner, .intro-section, .repo-section, .page-footer").forEach((node) => {

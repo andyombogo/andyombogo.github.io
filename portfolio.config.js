@@ -1,25 +1,77 @@
 window.PORTFOLIO_CONFIG = {
   site: {
-    title: "John Andrew | Data Scientist",
+    title: "John Andrew | Health Data Scientist",
     description:
-      "Selected work by John Andrew across data science, analytics, and public health."
+      "Selected work by John Andrew across health data science, analytics, statistics, and public health."
   },
   profile: {
     name: "John Andrew",
-    title: "Data Scientist",
+    title: "Health Data Scientist",
     focus:
       "Public health analytics, statistics, data science, explainable ML, dashboards, and remote data science delivery.",
     location: "Nairobi, Kenya",
     bio:
-      "I build practical data science work that goes beyond notebooks, from data cleaning and modeling to documentation, deployment, and interfaces people can actually use.",
+      "I build practical health data science work that moves from analysis to delivery, combining statistics, machine learning, dashboards, and research support into tools people can actually use.",
     intro:
-      "Most of my recent work sits at the intersection of public health, machine learning, and analytical storytelling, especially when I can turn a research workflow into something clearer and more usable.",
+      "My recent work sits between public health, academic research, and deployment-ready analytics, especially when I can turn a complex workflow into something clearer, more interpretable, and easier to act on.",
     highlight:
-      "Applied machine learning, public health data, and decision-support interfaces.",
+      "Health data science, research delivery, explainable ML, and decision-support dashboards.",
     avatarUrl: "https://avatars.githubusercontent.com/u/185175445?v=4&updated=20260324",
     githubUrl: "https://github.com/andyombogo",
     linkedinUrl: "https://linkedin.com/in/john-andrew-dts",
     email: "andyombogo@gmail.com",
+    profileLinks: [
+      {
+        label: "GitHub",
+        href: "https://github.com/andyombogo",
+        icon: "github",
+        detail: "Code and repos"
+      },
+      {
+        label: "LinkedIn",
+        href: "https://linkedin.com/in/john-andrew-dts",
+        icon: "linkedin",
+        detail: "Professional profile"
+      },
+      {
+        label: "Research Data Associate",
+        href: "https://www.aku.edu/bmi/about/Pages/john-odhiambo.aspx",
+        imageUrl: "https://www.aku.edu/bmi/about/Documents/aku-bmi-web.svg",
+        imageAlt: "Brain and Mind Institute logo",
+        detail: "AKU Brain and Mind Institute"
+      },
+      {
+        label: "ORCID",
+        href: "https://orcid.org/0009-0009-2063-3060",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg",
+        imageAlt: "ORCID logo",
+        detail: "0009-0009-2063-3060"
+      },
+      {
+        label: "SSACAB II Fellow",
+        href: "https://www.ssacab.co.za/Fellows/SSACABII/Masters.aspx",
+        imageUrl:
+          "https://www.ssacab.co.za/Portals/0/SSACAB_logo_transparent.png?ver=27CKj2D64YeH-b1nGgARMQ%3d%3d",
+        imageAlt: "SSACAB logo",
+        detail: "Consortium fellow profile"
+      },
+      {
+        label: "Email",
+        href: "mailto:andyombogo@gmail.com",
+        icon: "mail",
+        detail: "andyombogo@gmail.com"
+      }
+    ],
+    affiliations: [
+      {
+        name: "University of Nairobi",
+        detail: "Department of Mathematics"
+      },
+      {
+        name: "Aga Khan University",
+        detail: "Brain and Mind Institute"
+      }
+    ],
     repoCount: 5,
     footerNote:
       "Selected projects, source code, and live demos are organized here to make the work easy to explore."

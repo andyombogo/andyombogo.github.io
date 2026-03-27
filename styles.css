@@ -15,9 +15,9 @@
   --shadow: 0 24px 50px rgba(15, 23, 42, 0.08);
   --shadow-strong: 0 28px 60px rgba(15, 23, 42, 0.12);
   --glow: rgba(37, 99, 235, 0.18);
-  --wrapper-width: 980px;
-  --sidebar-width: 300px;
-  --content-width: 600px;
+  --wrapper-width: 1020px;
+  --sidebar-width: 320px;
+  --content-width: 620px;
 }
 
 *,
@@ -74,6 +74,13 @@ a {
 .link-icon svg {
   width: 100%;
   height: 100%;
+  display: block;
+}
+
+.link-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
 }
 
@@ -274,6 +281,18 @@ dl {
   box-shadow: 0 14px 22px rgba(37, 99, 235, 0.18);
 }
 
+.contact-link[data-icon-type="image"] .link-icon {
+  width: 58px;
+  height: 44px;
+  padding: 6px 8px;
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(244, 248, 255, 0.94));
+  border: 1px solid rgba(78, 114, 162, 0.12);
+  color: inherit;
+  box-shadow: 0 14px 22px rgba(15, 23, 42, 0.08);
+}
+
 .contact-link[data-icon="linkedin"] .link-icon {
   background: linear-gradient(135deg, #0a66c2 0%, #2563eb 100%);
 }
@@ -290,6 +309,49 @@ dl {
   margin-bottom: 22px;
   position: relative;
   z-index: 1;
+}
+
+.affiliations-block {
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 1;
+}
+
+.affiliations-list {
+  display: grid;
+  gap: 10px;
+}
+
+.affiliation-item {
+  position: relative;
+  padding: 13px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(78, 114, 162, 0.16);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86);
+  overflow: hidden;
+}
+
+.affiliation-item::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #2563eb 0%, #14b8a6 100%);
+}
+
+.affiliation-name {
+  display: block;
+  color: var(--heading);
+  font-size: 0.96rem;
+}
+
+.affiliation-detail {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.84rem;
 }
 
 .profile-bio {
