@@ -123,6 +123,20 @@ function makeAnchorLink(label, href, className, options = {}) {
   return link;
 }
 
+function mergeRepoData(configRepo, liveRepo = {}) {
+  return {
+    ...configRepo,
+    ...liveRepo,
+    description: configRepo.description || liveRepo.description || "",
+    homepage: configRepo.homepage || liveRepo.homepage || "",
+    homepageLabel: configRepo.homepageLabel || "Website",
+    language: configRepo.language || liveRepo.language || "",
+    topics: configRepo.topics || liveRepo.topics || [],
+    stargazers_count: liveRepo.stargazers_count ?? configRepo.stargazers_count ?? 0,
+    updated_at: liveRepo.updated_at || configRepo.updated_at || ""
+  };
+}
+
 function renderExternalLink(href, label, className, icon) {
   return `
     <a class="${escapeHtml(className)}" href="${escapeHtml(href)}" target="_blank" rel="noreferrer">
@@ -416,22 +430,26 @@ async function loadRepoFeed(config) {
 
     const repos = await response.json();
     const excludedRepos = new Set(config.repoFeed.exclude || []);
-    const visibleRepos = repos
-      .filter((repo) => !repo.fork)
-      .filter((repo) => !excludedRepos.has(repo.name))
-      .slice(0, config.repoFeed.limit)
-      .map((repo) => {
-        const fallback = configuredByName.get(repo.name) || {};
-        return {
-          ...fallback,
-          ...repo,
-          description: repo.description || fallback.description || "",
-          homepage: repo.homepage || fallback.homepage || "",
-          homepageLabel: fallback.homepageLabel || "Website",
-          language: repo.language || fallback.language || "",
-          topics: repo.topics || fallback.topics || []
-        };
-      });
+    const liveByName = new Map(
+      repos
+        .filter((repo) => !repo.fork)
+        .filter((repo) => !excludedRepos.has(repo.name))
+        .map((repo) => [repo.name, repo])
+    );
+
+    const visibleRepos = configuredRepos.length
+      ? configuredRepos
+          .filter((repo) => !excludedRepos.has(repo.name))
+          .slice(0, config.repoFeed.limit)
+          .map((repo) => mergeRepoData(repo, liveByName.get(repo.name)))
+      : repos
+          .filter((repo) => !repo.fork)
+          .filter((repo) => !excludedRepos.has(repo.name))
+          .slice(0, config.repoFeed.limit)
+          .map((repo) => {
+            const fallback = configuredByName.get(repo.name) || {};
+            return mergeRepoData(fallback, repo);
+          });
 
     renderRepoList(container, visibleRepos);
   } catch (error) {
@@ -489,12 +507,22 @@ function bootstrapPortfolio() {
   if (affiliationsList) {
     affiliationsList.innerHTML = "";
     (config.profile.affiliations || []).forEach((affiliation) => {
-      const item = document.createElement("article");
-      item.className = "affiliation-item";
-      item.innerHTML = `
-        <strong class="affiliation-name">${escapeHtml(affiliation.name)}</strong>
-        <span class="affiliation-detail">${escapeHtml(affiliation.detail)}</span>
-      `;
+      const item = affiliation.href
+        ? makeLink(affiliation.name, affiliation.href, "affiliation-link", {
+            imageUrl: affiliation.imageUrl,
+            imageAlt: affiliation.imageAlt,
+            detail: affiliation.detail
+          })
+        : document.createElement("article");
+
+      if (!affiliation.href) {
+        item.className = "affiliation-item";
+        item.innerHTML = `
+          <strong class="affiliation-name">${escapeHtml(affiliation.name)}</strong>
+          <span class="affiliation-detail">${escapeHtml(affiliation.detail)}</span>
+        `;
+      }
+
       affiliationsList.appendChild(item);
     });
   }

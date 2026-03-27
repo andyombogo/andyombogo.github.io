@@ -8,7 +8,7 @@ window.PORTFOLIO_CONFIG = {
     name: "John Andrew",
     title: "Health Data Scientist",
     focus:
-      "Public health analytics, statistics, data science, explainable ML, dashboards, and remote data science delivery.",
+      "Public health analytics, statistics, data science, explainable ML, dashboards, and consulting-led research projects.",
     location: "Nairobi, Kenya",
     bio:
       "I build practical health data science work that moves from analysis to delivery, combining statistics, machine learning, dashboards, and research support into tools people can actually use.",
@@ -64,12 +64,19 @@ window.PORTFOLIO_CONFIG = {
     ],
     affiliations: [
       {
-        name: "University of Nairobi",
-        detail: "Department of Mathematics"
+        name: "Aga Khan University",
+        detail: "Brain and Mind Institute",
+        href: "https://www.aku.edu/bmi/Pages/home.aspx",
+        imageUrl: "https://www.aku.edu/Style%20Library/Images/AKU_logo.gif",
+        imageAlt: "Aga Khan University logo"
       },
       {
-        name: "Aga Khan University",
-        detail: "Brain and Mind Institute"
+        name: "University of Nairobi",
+        detail: "Department of Mathematics",
+        href: "https://mathematics.uonbi.ac.ke/",
+        imageUrl:
+          "https://mathematics.uonbi.ac.ke/sites/mathematics.uonbi.ac.ke/files/best-logo59_0.png",
+        imageAlt: "University of Nairobi logo"
       }
     ],
     repoCount: 5,
@@ -79,7 +86,7 @@ window.PORTFOLIO_CONFIG = {
   featuredSummary:
     "A tighter selection of projects that show how I approach applied data work: practical problems, interpretable outputs, and thoughtful presentation.",
   repoFeedSummary:
-    "A curated GitHub selection focused on the projects that best represent my public health, analytics, and deployment work, with a live refresh on page load.",
+    "A focused GitHub selection that highlights the five projects I most want people to explore right now, from deployed dashboards to reusable public-health tooling.",
   featuredProjects: [
     {
       repo: "open-health-risk-engine",
@@ -203,21 +210,20 @@ window.PORTFOLIO_CONFIG = {
   ],
   publicRepos: [
     {
-      name: "andyombogo.github.io",
-      featured: true,
-      tone: "ink",
-      eyebrow: "Portfolio Source",
-      html_url: "https://github.com/andyombogo/andyombogo.github.io",
+      name: "open-health-risk-engine",
+      tone: "blue",
+      eyebrow: "Flagship ML Product",
+      html_url: "https://github.com/andyombogo/open-health-risk-engine",
       description:
-        "Root GitHub Pages portfolio for John Andrew, designed as the main public home for selected work and live project links.",
+        "Explainable mental health risk engine built from NHANES data with XGBoost, SHAP, and a live Streamlit-style calculator experience.",
       impact:
-        "This is the repo behind the site you are reading now, where the portfolio presentation itself is treated like a product.",
-      language: "HTML",
-      homepage: "https://andyombogo.github.io/",
-      homepageLabel: "Portfolio",
+        "This is the strongest example of my workflow end to end: modeling, explainability, testing, and a live user-facing experience.",
+      language: "Python",
+      homepage: "https://open-health-risk-engine.onrender.com/",
+      homepageLabel: "Live demo",
       stargazers_count: 0,
-      updated_at: "2026-03-22T09:30:00Z",
-      topics: ["portfolio", "github-pages", "personal-site", "data-science"]
+      updated_at: "2026-03-21T16:09:16Z",
+      topics: ["data-science", "machine-learning", "mental-health", "shap", "xgboost"]
     },
     {
       name: "vaccination-coverage-analysis-usa",
@@ -236,20 +242,36 @@ window.PORTFOLIO_CONFIG = {
       topics: ["streamlit", "cdc", "dashboard", "public-health", "render"]
     },
     {
-      name: "open-health-risk-engine",
-      tone: "blue",
-      eyebrow: "Flagship ML Product",
-      html_url: "https://github.com/andyombogo/open-health-risk-engine",
+      name: "art-coverage-app",
+      tone: "teal",
+      eyebrow: "Flask Dashboard",
+      html_url: "https://github.com/andyombogo/art-coverage-app",
       description:
-        "Explainable mental health risk engine built from NHANES data with XGBoost, SHAP, and a live Streamlit-style calculator experience.",
+        "Interactive Flask + Plotly dashboard for exploring WHO ART coverage by country, region, and year, with exportable views and a summary API.",
       impact:
-        "This is the strongest example of my workflow end to end: modeling, explainability, testing, and a live user-facing experience.",
-      language: "Python",
-      homepage: "https://open-health-risk-engine.onrender.com/",
-      homepageLabel: "Live demo",
+        "The latest version feels product-ready: Render deployment, CI-backed checks, cleaner repo structure, filtered CSV downloads, and dashboard views that tell a clearer public-health story.",
+      language: "HTML",
+      homepage: "https://art-coverage-dashboard.onrender.com/",
+      homepageLabel: "Live dashboard",
       stargazers_count: 0,
-      updated_at: "2026-03-21T16:09:16Z",
-      topics: ["data-science", "machine-learning", "mental-health", "shap", "xgboost"]
+      updated_at: "2026-03-24T12:33:50Z",
+      topics: ["flask", "plotly", "public-health", "render", "data-visualization"]
+    },
+    {
+      name: "khis-toolkit",
+      tone: "ink",
+      eyebrow: "In Progress Toolkit",
+      html_url: "https://github.com/andyombogo/khis-toolkit",
+      description:
+        "Kenya-first Python analytics toolkit for DHIS2 and KHIS health data, built to help county teams move from extraction to cleaning, quality checks, forecasting, and dashboard-ready outputs.",
+      impact:
+        "This one is still actively developing, but the README already shows the direction clearly: a reusable workflow for county health analytics, mental-health indicators, and public-health decision support.",
+      language: "Python",
+      homepage: "https://github.com/andyombogo/khis-toolkit/blob/main/README.md",
+      homepageLabel: "Readme",
+      stargazers_count: 0,
+      updated_at: "",
+      topics: ["khis", "dhis2", "kenya", "public-health", "forecasting"]
     },
     {
       name: "movies-dataset",
@@ -266,27 +288,11 @@ window.PORTFOLIO_CONFIG = {
       stargazers_count: 0,
       updated_at: "2025-03-03T11:45:49Z",
       topics: ["python", "data-analysis", "eda", "data-cleaning"]
-    },
-    {
-      name: "art-coverage-app",
-      tone: "teal",
-      eyebrow: "Flask Dashboard",
-      html_url: "https://github.com/andyombogo/art-coverage-app",
-      description:
-        "Interactive Flask + Plotly dashboard for exploring WHO ART coverage by country, region, and year, with exportable views and a summary API.",
-      impact:
-        "The latest version feels product-ready: Render deployment, CI-backed checks, cleaner repo structure, filtered CSV downloads, and dashboard views that tell a clearer public-health story.",
-      language: "HTML",
-      homepage: "https://art-coverage-dashboard.onrender.com/",
-      homepageLabel: "Live dashboard",
-      stargazers_count: 0,
-      updated_at: "2026-03-24T12:33:50Z",
-      topics: ["flask", "plotly", "public-health", "render", "data-visualization"]
     }
   ],
   repoFeed: {
     username: "andyombogo",
     limit: 20,
-    exclude: ["minimal-portfolio", "andyombogo", "SDS-6103", "design"]
+    exclude: ["minimal-portfolio", "andyombogo", "andyombogo.github.io", "SDS-6103", "design"]
   }
 };
