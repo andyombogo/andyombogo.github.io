@@ -7,7 +7,8 @@ window.PORTFOLIO_CONFIG = {
   profile: {
     name: "John Andrew",
     title: "Data Scientist",
-    focus: "Public health analytics, explainable ML, and dashboards",
+    focus:
+      "Public health analytics, statistics, data science, explainable ML, dashboards, and remote data science delivery.",
     location: "Nairobi, Kenya",
     bio:
       "I build practical data science work that goes beyond notebooks, from data cleaning and modeling to documentation, deployment, and interfaces people can actually use.",
