@@ -7,15 +7,17 @@ window.PORTFOLIO_CONFIG = {
   profile: {
     name: "John Andrew",
     title: "Health Data Scientist",
+    positioning:
+      "Public-health and research analytics with a bias for decision-ready dashboards.",
     focus:
-      "Public health analytics, statistics, data science, explainable ML, dashboards, and consulting-led research projects.",
+      "Public health analytics, statistics, data science, explainable ML, dashboards, and research consulting.",
     location: "Nairobi, Kenya",
     bio:
-      "I build practical health data science work that moves from analysis to delivery, combining statistics, machine learning, dashboards, and research support into tools people can actually use.",
+      "I turn complex health and research data into clear analytical workflows, live dashboards, and interpretable machine learning tools people can actually use.",
     intro:
-      "My recent work sits between public health, academic research, and deployment-ready analytics, especially when I can turn a complex workflow into something clearer, more interpretable, and easier to act on.",
+      "Recent work spans public-health dashboards, research-facing analytics, and reusable tooling for teams that need evidence they can actually act on.",
     highlight:
-      "Health data science, research delivery, explainable ML, and decision-support dashboards.",
+      "Research collaborations, dashboard delivery, and interpretable health-data tools.",
     avatarUrl: "https://avatars.githubusercontent.com/u/185175445?v=4&updated=20260324",
     githubUrl: "https://github.com/andyombogo",
     linkedinUrl: "https://linkedin.com/in/john-andrew-dts",
@@ -79,14 +81,43 @@ window.PORTFOLIO_CONFIG = {
         imageAlt: "University of Nairobi logo"
       }
     ],
-    repoCount: 6,
+    repoCount: 5,
     footerNote:
-      "Selected projects, source code, and live demos are organized here to make the work easy to explore."
+      "If a project looks relevant, the code, live demo, or readme is never more than a click away."
+  },
+  heroFacts: [
+    { label: "Live builds", value: "3 public demos" },
+    { label: "Working style", value: "Research + delivery" },
+    { label: "Open to", value: "Collaborations" }
+  ],
+  workWithMe: {
+    headline: "Research-facing analytics that moves from data to decisions.",
+    summary:
+      "I am a strong fit for collaborations that need rigorous analysis and something practical at the end: a cleaned workflow, an interpretable model, or a dashboard people can actually use.",
+    ctaLabel: "Start a conversation",
+    ctaHref: "mailto:andyombogo@gmail.com",
+    items: [
+      {
+        title: "Research data projects",
+        detail:
+          "Study support, analytical workflows, and reproducible outputs for public-health and academic work."
+      },
+      {
+        title: "Dashboards and reporting",
+        detail:
+          "Decision-ready dashboards and KPI views that make trends, gaps, and results easier to explore."
+      },
+      {
+        title: "Explainable analytics",
+        detail:
+          "Interpretable models, validation, and reasoning you can defend in research or stakeholder settings."
+      }
+    ]
   },
   featuredSummary:
-    "A tighter selection of projects that show how I approach applied data work: practical problems, interpretable outputs, and thoughtful presentation.",
+    "A focused set of builds that shows how I work: public-health dashboards, interpretable machine learning, and reusable analytics tooling.",
   repoFeedSummary:
-    "A focused GitHub selection that highlights the six projects I most want people to explore right now, from deployed dashboards to reusable public-health tooling.",
+    "A curated repo selection centered on live public-health builds, evolving research tooling, and clean analytical workflows.",
   featuredProjects: [
     {
       repo: "open-health-risk-engine",
@@ -95,11 +126,11 @@ window.PORTFOLIO_CONFIG = {
       title: "Open Health Risk Engine",
       language: "Python",
       summary:
-        "An end-to-end mental health risk demo built from NHANES survey data and designed to feel like a serious applied machine learning case study.",
+        "An explainable mental-health risk demo that brings modeling, interpretation, and a live scoring experience together in one public build.",
       detail:
-        "The project combines a reproducible data pipeline, model comparison, SHAP-based explanation, automated tests, and an interactive Streamlit interface. It is the kind of work I enjoy most: using public data to build something analytical, interpretable, and deployment-ready.",
+        "Built from NHANES data with a reproducible pipeline, model comparison, SHAP explanations, automated tests, and a deployment-ready interface.",
       callout:
-        "The live demo gives visitors a direct look at how the scoring experience works in practice.",
+        "Shows that I can take an ML idea all the way from data prep to a public-facing, interpretable product.",
       imageUrl:
         "https://raw.githubusercontent.com/andyombogo/open-health-risk-engine/main/figures/app_walkthrough.png",
       imageAlt:
@@ -125,11 +156,11 @@ window.PORTFOLIO_CONFIG = {
       title: "US Maternal Vaccination Coverage Dashboard",
       language: "Python",
       summary:
-        "A live Streamlit dashboard for exploring CDC maternal vaccination coverage across vaccines, geographies, seasons, and demographic dimensions.",
+        "A live public-health dashboard for exploring CDC maternal vaccination coverage across geography, season, and demographic dimensions.",
       detail:
-        "The latest version cleanly separates a lightweight deployed dashboard from the heavier offline Spark workflow, adds CI-backed tests, and packages the app for Render so the public experience feels maintained and production-minded rather than experimental.",
+        "The current build separates a lightweight deployed app from the heavier offline workflow and packages it cleanly for Render with CI-backed checks.",
       callout:
-        "The current dashboard surfaces 4,322 cleaned CDC records with 62.6% average coverage and 61.7% weighted coverage in the top-level KPI view.",
+        "Turns a complex CDC dataset into a faster, policy-friendly dashboard with clear top-line indicators.",
       imageUrl:
         "https://raw.githubusercontent.com/andyombogo/vaccination-coverage-analysis-usa/master/docs/assets/dashboard-hero-preview.png",
       imageAlt:
@@ -160,11 +191,11 @@ window.PORTFOLIO_CONFIG = {
       title: "WHO ART Coverage Dashboard",
       language: "Python",
       summary:
-        "An interactive Flask + Plotly dashboard for exploring WHO antiretroviral therapy coverage by country, region, and year.",
+        "An interactive Flask dashboard for exploring WHO antiretroviral therapy coverage by country, region, and year.",
       detail:
-        "The repo now reads like a real product instead of a loose analysis project: Render-ready deployment, CI-backed checks, a cleaner structure, exportable filtered CSV views, a lightweight JSON summary endpoint, and clearer analytical views for overview, regional trends, and top or bottom performers.",
+        "It now reads more like a maintained product than a loose analysis project, with Render deployment, CI-backed checks, cleaner structure, and exportable views.",
       callout:
-        "The latest dashboard works with 3,407 usable country records across 146 countries, covering coverage estimates from 2000 through 2023.",
+        "Makes a broad WHO dataset easier to scan, compare, and use through a cleaner public-health interface.",
       imageUrl:
         "https://raw.githubusercontent.com/andyombogo/art-coverage-app/master/docs/assets/overview-preview.svg",
       imageAlt:
@@ -194,12 +225,13 @@ window.PORTFOLIO_CONFIG = {
       category: "Kenya Health Data Toolkit",
       title: "KHIS Toolkit",
       language: "Python",
+      status: "In development",
       summary:
-        "A Kenya-first analytics toolkit for DHIS2 and KHIS workflows, designed to help county teams move from extraction to cleaning, quality checks, forecasting, and dashboard-ready outputs.",
+        "A Kenya-first toolkit for DHIS2 and KHIS workflows, designed to help county teams move from extraction to cleaning, quality checks, forecasting, and dashboard-ready outputs.",
       detail:
-        "The current README already frames it like a serious public-health utility package: county-aware data pulls, KHIS-specific cleaning, data quality scorecards, forecasting options, and a mental-health workflow that can support both research and operational review.",
+        "I am still iterating on the package, but the direction is clear: county-aware data pulls, KHIS-specific cleaning, data quality scorecards, forecasting options, and a mental-health workflow that can support both research and operational review.",
       callout:
-        "This is still in active development, so I positioned it as an evolving toolkit with a strong README and clear public-health direction.",
+        "Still in development and active iteration, with the readme acting as the clearest public snapshot of where the toolkit is going.",
       tags: ["KHIS", "DHIS2", "Kenya", "Forecasting", "Data Quality"],
       links: [
         {
@@ -221,9 +253,9 @@ window.PORTFOLIO_CONFIG = {
       title: "Movies Dataset Exploration",
       language: "Python",
       summary:
-        "A smaller Python project centered on working with movie data through repeatable cleaning, exploration, and analysis.",
+        "A lighter Python project centered on repeatable cleaning, exploration, and analysis with movie data.",
       detail:
-        "Not every project needs a large deployment story. This repository represents the other side of my work: taking a dataset, structuring it well, and using code to make the exploratory process cleaner and easier to extend.",
+        "It represents the quieter side of my work: taking a dataset, structuring it well, and making the exploratory process cleaner and easier to extend.",
       tags: ["EDA", "Python", "Data Wrangling"],
       links: [
         {
@@ -241,9 +273,9 @@ window.PORTFOLIO_CONFIG = {
       eyebrow: "Flagship ML Product",
       html_url: "https://github.com/andyombogo/open-health-risk-engine",
       description:
-        "Explainable mental health risk engine built from NHANES data with XGBoost, SHAP, and a live Streamlit-style calculator experience.",
+        "Explainable mental-health risk engine built from NHANES data with XGBoost, SHAP, and a live calculator experience.",
       impact:
-        "This is the strongest example of my workflow end to end: modeling, explainability, testing, and a live user-facing experience.",
+        "Strongest end-to-end proof of how I work: modeling, explainability, testing, and a live user-facing build.",
       language: "Python",
       homepage: "https://open-health-risk-engine.onrender.com/",
       homepageLabel: "Live demo",
@@ -257,9 +289,9 @@ window.PORTFOLIO_CONFIG = {
       eyebrow: "Dashboard Build",
       html_url: "https://github.com/andyombogo/vaccination-coverage-analysis-usa",
       description:
-        "Deployment-ready Streamlit dashboard for exploring CDC maternal vaccination coverage with KPI cards, trend views, geography comparisons, and CSV export.",
+        "Deployment-ready Streamlit dashboard for exploring CDC maternal vaccination coverage with KPI cards, trend views, geography comparisons, and export.",
       impact:
-        "The latest build balances a fast public dashboard with preserved Spark analysis, plus CI and Render deployment so the project feels polished end to end.",
+        "A good example of turning a complex public-health dataset into a lighter, more usable dashboard without losing rigor.",
       language: "Python",
       homepage: "https://vaccination-coverage-dashboard.onrender.com/",
       homepageLabel: "Live dashboard",
@@ -273,9 +305,9 @@ window.PORTFOLIO_CONFIG = {
       eyebrow: "Flask Dashboard",
       html_url: "https://github.com/andyombogo/art-coverage-app",
       description:
-        "Interactive Flask + Plotly dashboard for exploring WHO ART coverage by country, region, and year, with exportable views and a summary API.",
+        "Interactive Flask dashboard for exploring WHO ART coverage by country, region, and year, with exportable views and a summary API.",
       impact:
-        "The latest version feels product-ready: Render deployment, CI-backed checks, cleaner repo structure, filtered CSV downloads, and dashboard views that tell a clearer public-health story.",
+        "Shows product-minded cleanup: cleaner structure, clearer views, Render deployment, and public-health storytelling that is easier to follow.",
       language: "HTML",
       homepage: "https://art-coverage-dashboard.onrender.com/",
       homepageLabel: "Live dashboard",
@@ -286,12 +318,13 @@ window.PORTFOLIO_CONFIG = {
     {
       name: "khis-toolkit",
       tone: "ink",
-      eyebrow: "In Progress Toolkit",
+      eyebrow: "In Development",
+      status: "Iterating",
       html_url: "https://github.com/andyombogo/khis-toolkit",
       description:
-        "Kenya-first Python analytics toolkit for DHIS2 and KHIS health data, built to help county teams move from extraction to cleaning, quality checks, forecasting, and dashboard-ready outputs.",
+        "Kenya-first Python analytics toolkit for DHIS2 and KHIS data, built to help county teams move from extraction to cleaning, quality checks, forecasting, and dashboard-ready outputs.",
       impact:
-        "This one is still actively developing, but the README already shows the direction clearly: a reusable workflow for county health analytics, mental-health indicators, and public-health decision support.",
+        "Still iterating, but already pointing toward a reusable workflow for county health analytics, mental-health indicators, and public-health decision support.",
       language: "Python",
       homepage: "https://github.com/andyombogo/khis-toolkit/blob/main/README.md",
       homepageLabel: "Readme",
@@ -315,25 +348,10 @@ window.PORTFOLIO_CONFIG = {
       updated_at: "2025-03-03T11:45:49Z",
       topics: ["python", "data-analysis", "eda", "data-cleaning"]
     },
-    {
-      name: "SDS-6103",
-      tone: "orange",
-      eyebrow: "Academic Work",
-      html_url: "https://github.com/andyombogo/SDS-6103",
-      description: "",
-      impact:
-        "This rounds out the portfolio with academic statistical computing work from the MSc Data Science track, complementing the more deployment-focused projects above.",
-      language: "",
-      homepage: "",
-      homepageLabel: "",
-      stargazers_count: 0,
-      updated_at: "",
-      topics: ["statistics", "academic-work", "data-science"]
-    }
   ],
   repoFeed: {
     username: "andyombogo",
     limit: 20,
-    exclude: ["minimal-portfolio", "andyombogo", "andyombogo.github.io", "design"]
+    exclude: ["minimal-portfolio", "andyombogo", "andyombogo.github.io", "SDS-6103", "design"]
   }
 };

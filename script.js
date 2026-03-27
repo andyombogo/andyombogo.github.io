@@ -238,9 +238,14 @@ function renderFeaturedProjects(config) {
       ? "case-study case-study-spotlight reveal-target"
       : "case-study reveal-target";
 
-    const metaChips = [project.category, project.language]
+    const metaChips = [
+      project.status
+        ? `<span class="meta-chip meta-chip-status">${escapeHtml(project.status)}</span>`
+        : "",
+      project.category ? `<span class="meta-chip">${escapeHtml(project.category)}</span>` : "",
+      project.language ? `<span class="meta-chip">${escapeHtml(project.language)}</span>` : ""
+    ]
       .filter(Boolean)
-      .map((value) => `<span class="meta-chip">${escapeHtml(value)}</span>`)
       .join("");
 
     const tagMarkup = (project.tags || [])
@@ -340,6 +345,9 @@ function renderRepoItem(repo) {
   const eyebrowMarkup = repo.eyebrow
     ? `<span class="repo-kicker">${escapeHtml(repo.eyebrow)}</span>`
     : "";
+  const statusMarkup = repo.status
+    ? `<span class="repo-status">${escapeHtml(repo.status)}</span>`
+    : "";
 
   const tagMarkup = topics.length
     ? `<div class="repo-tags">${topics.map((topic) => `<span class="repo-tag">${escapeHtml(topic)}</span>`).join("")}</div>`
@@ -367,7 +375,10 @@ function renderRepoItem(repo) {
 
   item.innerHTML = `
     <div class="repo-topline">
-      ${eyebrowMarkup}
+      <div class="repo-topline-tags">
+        ${eyebrowMarkup}
+        ${statusMarkup}
+      </div>
       <span class="repo-language">${language}</span>
     </div>
     <div class="repo-item-head">
@@ -457,6 +468,38 @@ async function loadRepoFeed(config) {
   }
 }
 
+function renderWorkWithMe(config) {
+  const section = config.workWithMe || {};
+  setText("work-headline", section.headline);
+  setText("work-summary", section.summary);
+
+  const grid = document.getElementById("work-grid");
+  if (grid) {
+    grid.innerHTML = "";
+    (section.items || []).forEach((item) => {
+      const article = document.createElement("article");
+      article.className = "work-card reveal-target";
+      article.innerHTML = `
+        <h3>${escapeHtml(item.title)}</h3>
+        <p>${escapeHtml(item.detail)}</p>
+      `;
+      grid.appendChild(article);
+    });
+  }
+
+  const actions = document.getElementById("work-actions");
+  if (actions) {
+    actions.innerHTML = "";
+    if (section.ctaLabel && section.ctaHref) {
+      actions.appendChild(
+        makeLink(section.ctaLabel, section.ctaHref, "intro-action intro-action-secondary", {
+          icon: "mail"
+        })
+      );
+    }
+  }
+}
+
 function bootstrapPortfolio() {
   const config = window.PORTFOLIO_CONFIG;
   if (!config) {
@@ -472,6 +515,7 @@ function bootstrapPortfolio() {
 
   setText("profile-name", config.profile.name);
   setText("profile-title", config.profile.title);
+  setText("profile-positioning", config.profile.positioning);
   setText("profile-bio", config.profile.bio);
   setText("profile-intro", config.profile.intro);
   setText("profile-location", config.profile.location);
@@ -553,11 +597,11 @@ function bootstrapPortfolio() {
   if (factStrip) {
     factStrip.innerHTML = "";
 
-    [
-      { label: "Public site", value: "Live now" },
-      { label: "Selected repos", value: String(config.profile.repoCount) },
-      { label: "Featured focus", value: "Health + ML" }
-    ].forEach((item) => {
+    (config.heroFacts || [
+      { label: "Live builds", value: "3 public demos" },
+      { label: "Working style", value: "Research + delivery" },
+      { label: "Open to", value: "Collaborations" }
+    ]).forEach((item) => {
       const card = document.createElement("div");
       card.className = "fact-card";
       card.innerHTML = `
@@ -574,10 +618,11 @@ function bootstrapPortfolio() {
     footerLink.innerHTML = buildLinkContent("View full GitHub profile", { icon: "github" });
   }
 
-  document.querySelectorAll(".sidebar-inner, .intro-section, .repo-section, .page-footer").forEach((node) => {
+  document.querySelectorAll(".sidebar-inner, .intro-section, .work-section, .repo-section, .page-footer").forEach((node) => {
     node.classList.add("reveal-target");
   });
 
+  renderWorkWithMe(config);
   renderFeaturedProjects(config);
   loadRepoFeed(config);
   observeRevealTargets(document);

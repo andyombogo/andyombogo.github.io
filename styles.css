@@ -160,6 +160,7 @@ dl {
 
 .sidebar-inner,
 .intro-section,
+.work-section,
 .repo-section,
 .page-footer,
 .case-study {
@@ -215,8 +216,17 @@ dl {
   color: #305e95;
   font-size: 1rem;
   margin-top: -6px;
-  margin-bottom: 0;
+  margin-bottom: 8px;
   font-weight: 700;
+}
+
+.profile-positioning {
+  max-width: 26ch;
+  margin: 0;
+  color: #3a5876;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.55;
 }
 
 .profile-avatar {
@@ -453,9 +463,12 @@ dl {
 
 .content {
   min-width: 0;
+  display: grid;
+  gap: 28px;
 }
 
 .intro-section,
+.work-section,
 .repo-section,
 .page-footer {
   border-radius: 22px;
@@ -463,7 +476,6 @@ dl {
 }
 
 .intro-section {
-  margin-bottom: 28px;
   position: relative;
   overflow: hidden;
   background:
@@ -485,6 +497,29 @@ dl {
   height: 180px;
   border-radius: 999px;
   background: radial-gradient(circle, rgba(20, 184, 166, 0.16) 0%, transparent 70%);
+}
+
+.work-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(15, 118, 110, 0.12), transparent 24%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.97) 0%, rgba(248, 251, 255, 0.94) 100%);
+}
+
+.work-section::after {
+  content: "";
+  position: absolute;
+  inset: auto -48px -48px auto;
+  width: 170px;
+  height: 170px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.14) 0%, transparent 70%);
+}
+
+.work-section h2 {
+  max-width: 15ch;
+  text-wrap: balance;
 }
 
 .quick-nav {
@@ -611,9 +646,63 @@ dl {
   font-size: 1rem;
 }
 
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+  position: relative;
+  z-index: 1;
+}
+
+.work-card {
+  position: relative;
+  padding: 18px 18px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(78, 114, 162, 0.15);
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.work-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #0f766e 0%, #14b8a6 100%);
+}
+
+.work-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(37, 99, 235, 0.18);
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+}
+
+.work-card h3 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.work-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.work-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+  position: relative;
+  z-index: 1;
+}
+
 .featured-list {
   display: grid;
-  gap: 24px;
+  gap: 20px;
 }
 
 .case-study {
@@ -693,6 +782,12 @@ dl {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
+.meta-chip-status {
+  background: rgba(245, 158, 11, 0.14);
+  border-color: rgba(245, 158, 11, 0.26);
+  color: #915700;
+}
+
 .case-study-summary {
   color: var(--heading);
   font-size: 1.04rem;
@@ -707,12 +802,24 @@ dl {
 
 .case-study-callout {
   margin-top: -4px;
-  padding: 14px 16px;
+  padding: 16px 16px 14px;
   border-left: 3px solid #2563eb;
   border-radius: 0 14px 14px 0;
   background: linear-gradient(90deg, rgba(37, 99, 235, 0.1), rgba(15, 118, 110, 0.07));
   color: #274560;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.case-study-callout::before,
+.repo-impact::before {
+  content: "Why it matters";
+  display: block;
+  margin-bottom: 8px;
+  color: #5b6f8d;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .case-study-metrics {
@@ -808,7 +915,6 @@ dl {
 }
 
 .repo-section {
-  margin-top: 28px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 250, 255, 0.92) 100%);
 }
@@ -820,7 +926,7 @@ dl {
 .repo-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  gap: 16px;
   margin-top: 22px;
 }
 
@@ -888,6 +994,13 @@ dl {
   margin-bottom: 12px;
 }
 
+.repo-topline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
 .repo-kicker {
   display: inline-flex;
   align-items: center;
@@ -899,6 +1012,20 @@ dl {
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.repo-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(245, 158, 11, 0.14);
+  color: #915700;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -933,7 +1060,7 @@ dl {
 
 .repo-impact {
   margin-bottom: 14px;
-  padding: 13px 14px;
+  padding: 16px 14px 13px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.76);
   border: 1px solid rgba(78, 114, 162, 0.14);
@@ -1034,7 +1161,6 @@ dl {
 }
 
 .page-footer {
-  margin-top: 28px;
 }
 
 .page-footer p {
@@ -1096,6 +1222,10 @@ dl {
     bottom: 18px;
   }
 
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .fact-strip {
     grid-template-columns: 1fr;
   }
@@ -1116,10 +1246,40 @@ dl {
 @media print, screen and (max-width: 560px) {
   .sidebar-inner,
   .intro-section,
+  .work-section,
   .repo-section,
   .page-footer,
   .case-study {
     padding: 22px 20px;
+  }
+
+  .intro-section h2,
+  .work-section h2,
+  .repo-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .profile-positioning {
+    max-width: none;
+    font-size: 0.9rem;
+  }
+
+  .contact-link,
+  .affiliation-link,
+  .affiliation-item {
+    padding: 11px 12px;
+    gap: 10px;
+  }
+
+  .contact-link .link-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .contact-link[data-icon-type="image"] .link-icon,
+  .affiliation-link .link-icon {
+    width: 50px;
+    height: 38px;
   }
 
   .repo-item-head {
@@ -1127,10 +1287,20 @@ dl {
     align-items: flex-start;
   }
 
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
   .quick-nav,
-  .intro-actions {
+  .intro-actions,
+  .work-actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .quick-nav a,
+  .intro-action {
+    justify-content: center;
   }
 }
 
