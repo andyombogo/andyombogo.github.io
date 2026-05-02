@@ -36,13 +36,6 @@ window.PORTFOLIO_CONFIG = {
         detail: "Professional profile"
       },
       {
-        label: "Research Data Associate",
-        href: "https://www.aku.edu/bmi/about/Pages/john-odhiambo.aspx",
-        imageUrl: "https://www.aku.edu/bmi/about/Documents/aku-bmi-web.svg",
-        imageAlt: "Brain and Mind Institute logo",
-        detail: "AKU Brain and Mind Institute"
-      },
-      {
         label: "ORCID",
         href: "https://orcid.org/0009-0009-2063-3060",
         imageUrl: "https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg",
@@ -56,12 +49,6 @@ window.PORTFOLIO_CONFIG = {
           "https://www.ssacab.co.za/Portals/0/SSACAB_logo_transparent.png?ver=27CKj2D64YeH-b1nGgARMQ%3d%3d",
         imageAlt: "SSACAB logo",
         detail: "Consortium fellow profile"
-      },
-      {
-        label: "Email",
-        href: "mailto:andyombogo@gmail.com",
-        icon: "mail",
-        detail: "andyombogo@gmail.com"
       }
     ],
     affiliations: [
