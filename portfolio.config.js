@@ -2,22 +2,22 @@ window.PORTFOLIO_CONFIG = {
   site: {
     title: "John Andrew | Data Scientist",
     description:
-      "Selected work by John Andrew across health data science, analytics, statistics, and public health."
+      "Selected work by John Andrew across data science, analytics, machine learning, and public health."
   },
   profile: {
     name: "John Andrew",
     title: "Data Scientist",
     positioning:
-      "Public-health and research analytics with a bias for decision-ready dashboards.",
+      "Research-driven analytics with a bias for decision-ready, deployable products.",
     focus:
-      "Public health analytics, statistics, data science, explainable ML, dashboards, and research consulting.",
+      "Data science, analytics, explainable ML, dashboards, and research-facing products.",
     location: "Nairobi, Kenya",
     bio:
-      "I turn complex health and research data into clear analytical workflows, live dashboards, and interpretable machine learning tools people can actually use.",
+      "I turn complex datasets into clear analytical workflows, live dashboards, and interpretable machine learning tools people can actually use.",
     intro:
-      "Recent work spans public-health dashboards, research-facing analytics, and reusable tooling for teams that need evidence they can actually act on.",
+      "Recent work spans research-facing analytics, live dashboards, and reusable tooling for teams that need evidence they can act on.",
     highlight:
-      "Research collaborations, dashboard delivery, and interpretable health-data tools.",
+      "Research collaborations, dashboard delivery, and interpretable data tools.",
     avatarUrl: "https://avatars.githubusercontent.com/u/185175445?v=4&updated=20260324",
     githubUrl: "https://github.com/andyombogo",
     linkedinUrl: "https://linkedin.com/in/john-andrew-dts",
@@ -316,7 +316,7 @@ window.PORTFOLIO_CONFIG = {
       homepage: "https://github.com/andyombogo/khis-toolkit/blob/main/README.md",
       homepageLabel: "Readme",
       stargazers_count: 0,
-      updated_at: "",
+      updated_at: "2026-05-06T11:03:43Z",
       topics: ["khis", "dhis2", "kenya", "public-health", "forecasting"]
     },
     {
