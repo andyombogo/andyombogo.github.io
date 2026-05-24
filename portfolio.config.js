@@ -1,12 +1,12 @@
 window.PORTFOLIO_CONFIG = {
   site: {
-    title: "John Andrew | Health Data Scientist",
+    title: "John Andrew | Data Scientist",
     description:
       "Selected work by John Andrew across health data science, analytics, statistics, and public health."
   },
   profile: {
     name: "John Andrew",
-    title: "Health Data Scientist",
+    title: "Data Scientist",
     positioning:
       "Public-health and research analytics with a bias for decision-ready dashboards.",
     focus:
